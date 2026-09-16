@@ -1,5 +1,5 @@
 import {StatusBar} from 'expo-status-bar';
-import { Text, TextInput, View, Image, SafeAreaView, ScrollView} from 'react-native';
+import { Text, TextInput, View, Image, SafeAreaView, ScrollView,Button} from 'react-native';
 import { RadioButton } from 'react-native-paper';
 import {useState} from 'react';
 import styles from './Styles';
@@ -22,6 +22,7 @@ function MainScreen() {
         </View>
       )
     }
+    return arrDisplay;
   }
 
   return (
@@ -59,7 +60,7 @@ function MainScreen() {
                      onPress={() => setSelectedValue('1')}
                      color='orange'
                   />
-                  <Text style={styles.radioBtn}>Cat</Text>
+                  <Text style={styles.radioLabel}>Cat</Text>
                 </View>
 
                 {/*radio button for dog*/}
@@ -70,7 +71,7 @@ function MainScreen() {
                      onPress={() => setSelectedValue('2')}
                      color='orange'
                   />
-                  <Text style={styles.radioBtn}>Dog</Text>
+                  <Text style={styles.radioLabel}>Dog</Text>
                 </View>
 
                 {/*radio button for other*/}
@@ -81,12 +82,22 @@ function MainScreen() {
                      onPress={() => setSelectedValue('3')}
                      color='orange'
                   />
-                  <Text style={styles.radioBtn}>Other</Text>
+                  <Text style={styles.radioLabel}>Other</Text>
                 </View>
 
 
               </View>
             </View>
+          </View>
+
+          <Button title="Add Pet" 
+                 onPress={() => {
+                    setPet([...pet, petName]);
+                    setPetName('');
+                 }}
+          />
+          <View style= {styles.petContainer}>
+            {renderPets()}
           </View>
 
           
