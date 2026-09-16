@@ -2,7 +2,7 @@ import {StatusBar} from 'expo-status-bar';
 import { Text, TextInput, View, Image, SafeAreaView, ScrollView} from 'react-native';
 import { RadioButton } from 'react-native-paper';
 import {useState} from 'react';
-import styles from './Styles'
+import styles from './Styles';
 
 function MainScreen() {
 
@@ -30,7 +30,7 @@ function MainScreen() {
         <ScrollView>
           <Image
             style={styles.mogHubLogo}
-            source={require('../')}
+            source={require('../assets/Images/cat-logo.jpg')}
           />
           <Text style={styles.mainTxt}>Mog Hub</Text>
           <Text style={styles.slogan}>Purrfect companions</Text>
